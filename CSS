@@ -1,0 +1,161 @@
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --background-color: #ecf0f1;
+    --text-color: #34495e;
+    --card-bg-color: #ffffff;
+    --buy-color: #27ae60;
+    --sell-color: #e74c3c;
+    --hold-color: #f1c40f;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    background-color: var(--card-bg-color);
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8em;
+}
+
+header p {
+    margin: 5px 0 0;
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+main {
+    padding: 20px;
+    display: grid;
+    gap: 15px;
+}
+
+.card {
+    background-color: var(--card-bg-color);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.price-card #price {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin: 10px 0;
+    color: var(--primary-color);
+}
+
+.price-card #timestamp {
+    font-size: 0.8em;
+    color: #7f8c8d;
+}
+
+.signal-card {
+    border-width: 3px;
+}
+
+.signal-card #signal {
+    font-size: 2em;
+    font-weight: bold;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+/* Signal Colors */
+.buy {
+    color: var(--buy-color);
+    border-color: var(--buy-color);
+}
+.sell {
+    color: var(--sell-color);
+    border-color: var(--sell-color);
+}
+.hold {
+    color: var(--hold-color);
+    border-color: var(--hold-color);
+}
+
+.loading {
+    animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0.5; }
+}
+
+.indicators-card h2 {
+    margin-top: 0;
+}
+
+.indicator {
+    margin-bottom: 15px;
+}
+
+.progress-bar {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    height: 10px;
+    overflow: hidden;
+}
+
+#rsi-progress {
+    height: 100%;
+    width: 0%;
+    background-color: var(--secondary-color);
+    transition: width 0.5s ease-in-out;
+}
+
+.disclaimer {
+    font-size: 0.8em;
+    text-align: center;
+    padding: 10px;
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+}
+
+footer {
+    padding: 0 20px 20px;
+}
+
+#refresh-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#refresh-btn:hover {
+    background-color: #2980b9;
+}
